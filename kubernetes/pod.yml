@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: app
+  labels:
+    app: app
+spec:
+  containers:
+    - name: app
+      image: bogdannbv/docker-k8s-example-app:0.1.0
+      ports:
+        - name: app
+          containerPort: 8080
+          protocol: TCP
