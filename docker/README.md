@@ -57,7 +57,7 @@ docker run \
     -p 8080:8080 \
     --name app \
     bogdannbv/docker-k8s-example-app:0.1.0
-```
+````
 
 ```bash
 curl -s http://localhost:8080 | json_pp
