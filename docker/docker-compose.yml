@@ -5,7 +5,7 @@ services:
     image: bogdannbv/docker-k8s-example-app:dev
     container_name: docker-k8s-example-app
     build:
-      context: .
+      context: ..
       dockerfile: Dockerfile
       target: dev
     volumes:
