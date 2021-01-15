@@ -1,0 +1,29 @@
+version: "3.8"
+
+services:
+  app:
+    image: bogdannbv/docker-k8s-example-app:dev
+    container_name: docker-k8s-example-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: dev
+    volumes:
+      - .:/app
+    ports:
+      - 8080:8080
+    depends_on:
+      - mysql
+
+  mysql:
+    image: mysql:5.7
+    volumes:
+      - db_data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: supersecret
+      MYSQL_DATABASE: somedb
+      MYSQL_USER: example
+      MYSQL_PASSWORD: notthatsupersecret
+
+volumes:
+  db_data: {}
