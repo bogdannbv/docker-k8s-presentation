@@ -3,11 +3,11 @@ An example app for Docker & Kubernetes Presentation
 
 ## Prerequisites
 
-* Dcoker
-* docker-compose
-* dive
-* json_pp
-* tree
+* [Docker](https://docs.docker.com/get-docker)
+* [docker-compose](https://docs.docker.com/compose/install)
+* [dive](https://github.com/wagoodman/dive)
+* [json_pp](https://metacpan.org/pod/distribution/JSON-PP/bin/json_pp)
+* [tree](https://linux.die.net/man/1/tree)
 
 ## Commands
 
@@ -34,6 +34,11 @@ dive bogdannbv/docker-k8s-example-app:0.1.0
 docker push \
     --all-tags \
     bogdannbv/docker-k8s-example-app
+```
+
+```bash
+docker push \
+    bogdannbv/docker-k8s-example-app:latest
 ```
 
 ```bash
@@ -64,9 +69,13 @@ docker kill app
 ```
 
 ```bash
-docker inspect -f '{{ json .GraphDriver }}' app | json_pp
+docker start app
 ```
 
 ```bash
-docker start app
+docker stop app
+```
+
+```bash
+docker inspect -f '{{ json .GraphDriver }}' app | json_pp
 ```
