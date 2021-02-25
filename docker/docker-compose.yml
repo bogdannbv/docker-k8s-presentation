@@ -15,15 +15,15 @@ services:
     depends_on:
       - mysql
 
-  mysql:
-    image: mysql:5.7
-    volumes:
-      - db_data:/var/lib/mysql
-    environment:
-      MYSQL_ROOT_PASSWORD: supersecret
-      MYSQL_DATABASE: somedb
-      MYSQL_USER: example
-      MYSQL_PASSWORD: notthatsupersecret
+#   mysql:
+#     image: mysql:5.7
+#     volumes:
+#       - db_data:/var/lib/mysql
+#     environment:
+#       MYSQL_ROOT_PASSWORD: supersecret
+#       MYSQL_DATABASE: somedb
+#       MYSQL_USER: example
+#       MYSQL_PASSWORD: notthatsupersecret
 
 volumes:
   db_data: {}
